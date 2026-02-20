@@ -1,0 +1,159 @@
+body {
+    background-image: url(../img/fons.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.triangle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 2230px;
+    height: 1060px;
+    background-color: pink;
+    z-index: -1;
+    clip-path: polygon(200% 0, 100% 100%, 0 0);
+}
+
+.main {
+    width: 1000px;
+    margin: 0 auto;
+
+}
+
+/* estil del text titol */
+.titol {
+    color: black;
+    padding-top: 45px;
+    font-size: 4rem;
+    text-align: center;
+}
+
+/* estil del text titol */
+#and {
+    color: gray;
+}
+
+.imgprincipal {
+    height: 600px;
+    position: relative;
+    width: 1000px;
+    background-image: url(../img/pulp.png);
+    animation: carrousel 18s infinite;
+}
+
+/* grid 3x3*/
+.contenidor{
+    width: 960px;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .contenidor {
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 10px 10px;
+        width: 50%;
+    }
+
+    .imgprincipal {
+        width: 100%;
+        height: 300px;
+        padding: 50px 0 250px 0;
+    }
+
+    .titol {
+        font-size: 2.5rem;
+        text-align: left;
+        padding-left: 100px;
+    }
+}
+
+.item {
+    background-color: #fff;
+    color: gray;
+    opacity: 0.5;
+}
+
+/* Rotació i opacitat*/
+.item:hover {
+    opacity: 1;
+    animation: rotacio 0.6s;
+}
+
+/* separació i edició del text dins de la grid */
+.item div {
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+
+/* mida de las imatges de la grid */
+.item img {
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer img{
+    width: 220px;
+
+}
+
+/* imatges que van pasant pel carrousel */
+@keyframes carrousel {
+    0% {
+        background-image: url(../img/pulp.png);
+    }
+
+    12.5% {
+        background-image: url(../img/taxi.png);
+    }
+
+    25% {
+        background-image: url(../img/bond.png);
+    }
+
+    37.5% {
+        background-image: url(../img/ghost.png);
+    }
+
+    50% {
+        background-image: url(../img/bean.png);
+    }
+
+    62.5% {
+        background-image: url(../img/back.png);
+    }
+
+    75% {
+        background-image: url(../img/rider.png);
+    }
+
+    87.5% {
+        background-image: url(../img/team.png);
+    }
+
+    100% {
+        background-image: url(../img/break.png);
+    }
+}
+
+/* rotació de les imatges */
+@keyframes rotacio{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
